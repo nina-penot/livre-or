@@ -1,0 +1,224 @@
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --main_color: #0a064d;
+    --secondary_color: #312c88;
+    --highlight_color: #ffffff;
+    --supp_color1: rgb(255, 55, 158);
+    --supp_color1_hover: rgb(255, 145, 55);
+    --supp_color2: rgb(0, 232, 255);
+    --supp_color2_hover: rgb(0, 255, 38);
+    --shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.719);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --glow: 0px 0px 10px 2px rgb(255, 55, 158, 0.7);
+    --glow_hover: 0px 0px 10px 2px rgb(255, 145, 55, 0.7);
+    --glow2: 0px 0px 10px 2px rgb(0, 232, 255, 0.7);
+    --glow2_hover: 0px 0px 10px 2px rgb(0, 255, 38, 0.7);
+
+    /* Auto calc for messages */
+    --top_padd: 20px;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: var(--highlight_color);
+    background-color: var(--main_color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Utility */
+
+.float_left {
+    display: flex;
+    float: left;
+}
+
+.float_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap_small {
+    gap: 10px;
+}
+
+.block {
+    display: block;
+}
+
+.inline_block {
+    display: inline-block;
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+.glow {
+    box-shadow: var(--glow);
+}
+
+.border_killer {
+    border: none;
+}
+
+/* Header */
+
+.header {
+    background-color: var(--secondary_color);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.header_title {
+    color: var(--white);
+    font-size: 30px;
+    text-shadow: 0px 0px 9px var(--supp_color1), 0px 0px 9px var(--supp_color1);
+}
+
+/* Navbar */
+
+.nav_elem {
+    display: inline-block;
+    background-color: var(--supp_color2);
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.nav_elem:hover {
+    background-color: var(--supp_color2_hover);
+}
+
+.nav_elem_inside {
+    border-radius: 8px;
+    background-color: var(--secondary_color);
+    color: var(--supp_color2);
+    text-shadow: 0px 0px 9px var(--supp_color2), 0px 0px 9px var(--supp_color2);
+    font-size: 15px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav_elem_inside:hover {
+    color: var(--supp_color2_hover);
+    text-shadow: 0px 0px 9px var(--supp_color2_hover), 0px 0px 9px var(--supp_color2_hover);
+}
+
+.glow_out {
+    box-shadow: var(--glow2);
+}
+
+.glow_out:hover {
+    box-shadow: var(--glow2_hover);
+}
+
+.glow_in {
+    box-shadow: inset var(--glow2)
+}
+
+.glow_in:hover {
+    box-shadow: inset var(--glow2_hover);
+}
+
+/* Main */
+
+/* Connexion & Inscription */
+
+.connect_form {
+    background-color: var(--supp_color2);
+    color: var(--main_color);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Messages livre */
+
+.message_all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    /* background-color: greenyellow; */
+    gap: 25px;
+}
+
+.message_main {
+    position: relative;
+    padding: 20px 0 0 0;
+    width: 80vw;
+    /* background-color: red; */
+}
+
+.message_text_block {
+    display: block;
+    background-color: var(--supp_color2);
+    color: var(--main_color);
+    border-radius: 10px;
+    padding: 50px 15px 15px 15px;
+}
+
+.message_text {
+    background-color: var(--white);
+    color: var(--main_color);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.message_profile {
+    gap: 10px;
+    position: absolute;
+    background-color: var(--white);
+    color: var(--main_color);
+    border-radius: 10px;
+    padding: 4px 8px 4px 4px;
+    top: 0px;
+}
+
+.go_left {
+    left: 15px;
+}
+
+.go_right {
+    right: 15px;
+}
+
+.message_profile_img {
+    background-color: var(--supp_color1);
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+}
+
+.message_profile_txt {
+    font-size: 17px;
+    align-self: center;
+}
+
+/* Formulaire commentaire */
+
+.comment_textarea {
+    resize: none;
+    height: 200px;
+}
+
+/* Footer */
