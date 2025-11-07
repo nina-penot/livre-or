@@ -15,7 +15,7 @@
     --supp_color1_hover: rgb(255, 145, 55);
     --supp_color2: rgb(0, 232, 255);
     --supp_color2_hover: rgb(0, 255, 38);
-    --shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.719);
+    --shadow: 0px 0px 20px 30px rgb(0, 0, 0, 0.8);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --glow: 0px 0px 10px 2px rgb(255, 55, 158, 0.7);
     --glow_hover: 0px 0px 10px 2px rgb(255, 145, 55, 0.7);
@@ -70,6 +70,14 @@ body {
 
 .border_killer {
     border: none;
+}
+
+.pos_relative {
+    position: relative;
+}
+
+.pos_absolute {
+    position: absolute;
 }
 
 /* Header */
@@ -158,22 +166,26 @@ body {
 
 .message_main {
     position: relative;
-    padding: 20px 0 0 0;
+    padding: 40px 0 0 0;
     width: 80vw;
+    margin-top: 10px;
+    color: black;
     /* background-color: red; */
 }
 
 .message_text_block {
     display: block;
-    background-color: var(--supp_color2);
+    /* background-color: rgb(0, 0, 0, 0.8); */
+    /* box-shadow: var(--shadow); */
     color: var(--main_color);
     border-radius: 10px;
     padding: 50px 15px 15px 15px;
 }
 
 .message_text {
-    background-color: var(--white);
-    color: var(--main_color);
+    background-color: rgb(0, 0, 0, 0.8);
+    box-shadow: var(--shadow);
+    color: var(--white);
     border-radius: 10px;
     padding: 5px;
     font-size: 15px;
@@ -212,6 +224,36 @@ body {
 .message_profile_txt {
     font-size: 17px;
     align-self: center;
+}
+
+.paint_coords {
+    left: -5px;
+    bottom: 5px;
+}
+
+.paint_txt_coords {
+    top: 40%;
+    left: 40px;
+}
+
+.paint_text_style {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: bold;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    paint-order: stroke fill;
+}
+
+.svg_color_pink {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(86%) saturate(4242%) hue-rotate(311deg) brightness(105%) contrast(104%);
+}
+
+.svg_color_yellow {
+    filter: brightness(0) saturate(100%) invert(95%) sepia(99%) saturate(6863%) hue-rotate(340deg) brightness(111%) contrast(106%);
+}
+
+.svg_color_blue {
+    filter: brightness(0) saturate(100%) invert(59%) sepia(83%) saturate(1657%) hue-rotate(159deg) brightness(103%) contrast(102%);
 }
 
 /* Formulaire commentaire */
