@@ -6,16 +6,16 @@
  */
 function livre_livreor()
 {
-    $comments = get_all_comments();
+    //$comments = get_all_comments();
     $users = get_all_users();
 
     $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-    $per_page = 2;
+    $per_page = 5;
     $count = count_comments();
     $max_page = ceil($count / $per_page);
 
     $data = [
-        'comments' => $comments,
+        //'comments' => $comments,
         'users' => $users,
         'page' => $page,
         'max_page' => $max_page,

@@ -2,8 +2,8 @@
     <label for="login">Login</label>
     <input type="text" name="login" required>
     <label for="pass">Mot de passe</label>
-    <input type="text" name="pass" required>
+    <input type="password" name="pass" required>
     <label for="pass">Confirmation de mot de passe</label>
-    <input type="text" name="confirm" required>
+    <input type="password" name="confirm" required>
     <button type="submit">ENVOYER</button>
 </form>

@@ -21,6 +21,16 @@ function get_limited_comments($amount, $page)
 }
 
 /**
+ * Récupère un nombre limité de commentaires d'un utilisateur en particulier
+ */
+function get_limited_comments_user($user_id, $amount, $page)
+{
+    $offset = ($page - 1) * $amount;
+    $query = "SELECT * FROM commentaires WHERE commentaires.id_utilisateur = ? LIMIT ? OFFSET ?";
+    return db_select($query, [$user_id, $amount, $offset]);
+}
+
+/**
  * Récupère les commentaires d'un utilisateur
  */
 function get_comment_by_userid($user_id)

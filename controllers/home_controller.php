@@ -21,8 +21,12 @@ function home_profil()
     if (!is_logged_in()) {
         redirect('auth/connexion');
     }
+    $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+    $per_page = 2;
+    $count = count_comments();
+    $max_page = ceil($count / $per_page);
     //add database comments
-    $comments = get_comment_by_userid($_SESSION["user_id"]);
+    $comments = get_limited_comments_user($_SESSION["user_id"], $per_page, $page);
 
     //Ajout de changements d'info
     if (is_post()) {
@@ -53,6 +57,9 @@ function home_profil()
 
     $data = [
         'login' => $_SESSION["login"],
+        'page' => $page,
+        'max_page' => $max_page,
+        'per_page' => $per_page,
         'comments' => $comments
     ];
 

@@ -15,12 +15,13 @@
 <div class="message_all">
 
     <?php
+    $files = glob('path/../../public/assets/images/blobs/*.svg*');
     $colors = ['pink', 'blue', 'yellow'];
     $my_comments = get_limited_comments($per_page, $page);
     foreach ($my_comments as $num => $c) {
         $num1 = mt_rand(0, count($colors) - 1);
         $num2 = mt_rand(0, count($colors) - 1);
-        $blob_num = mt_rand(1, 3);
+        $blob_num = mt_rand(1, count($files) - 1);
         while ($num2 == $num1) {
             $num2 = mt_rand(0, count($colors) - 1);
         }
@@ -35,8 +36,8 @@
         } ?>
         <div class="message_main <?= $direction1 ?>">
             <div style="height: 120px; top: -20px" class="pos_absolute <?= $direction2 ?>">
-                <img style="height: inherit;" class="svg_color_<?= $rand_color1 ?>" src="../../public/assets/images/blob_<?= $blob_num ?>.svg" alt="splosh">
-                <img style="height: inherit;" class="svg_color_<?= $rand_color2 ?> pos_absolute paint_coords" src="../../public/assets/images/blob_<?= $blob_num ?>.svg" alt="splosh">
+                <img style="height: inherit;" class="svg_color_<?= $rand_color1 ?>" src="../../public/assets/images/blobs/<?= basename($files[$blob_num]) ?>" alt="splosh">
+                <img style="height: inherit;" class="svg_color_<?= $rand_color2 ?> pos_absolute paint_coords" src="../../public/assets/images/blobs/<?= basename($files[$blob_num]) ?>" alt="splosh">
                 <div style="gap: 10px;" class="pos_absolute paint_txt_coords float_left">
                     <div>👤</div>
                     <div class="paint_text_style"> <strong> <?= escape(get_comment_author($c["id"])) ?> </strong></div>
@@ -48,7 +49,7 @@
                     <div>
                         <?= escape($c['commentaire']) ?>
                     </div>
-                    <p>
+                    <p style="font-size: 10px;">
                         <?= escape($c['date']) ?>
                     </p>
                 </div>
@@ -57,6 +58,7 @@
         </div>
     <?php } ?>
 
+    <!-- Système de pagination -->
     <?php
     if ($page < 1) {
         redirect('livre/livreor?page=1');
@@ -65,19 +67,27 @@
         redirect('livre/livreor?page=' . $max_page);
     }
     if ($max_page > 1) {
-        //afficher pagination
-        if ($page < $max_page) {
-            generate_neon_link("Next page", 'livre/livreor?page=' . $page + 1);
-        } else if ($page > 1) {
-            generate_neon_link("Prev page", 'livre/livreor?page=' . $page - 1);
-        }
     ?>
-        <div>Page : <?= $page; ?>/<?= $max_page ?></div>
-        <form method="get">
-            <label for="page">Goto page</label>
-            <input type="number" max="<?= $max_page ?>" min="1" name="page" value="<?= $page ?>">
-            <?php generate_neon_button("GO") ?>
-        </form>
+        <div>Page : <?= $page; ?> / <?= $max_page ?></div>
+
+        <div class="page_grid">
+            <?php
+            //afficher pagination
+            if ($page > 1) {
+                generate_neon_link("Prev page", 'livre/livreor?page=' . $page - 1);
+            } else { ?> <div></div> <?php } ?>
+
+            <form style="justify-self: center;" method="get">
+                <label for="page">Goto page</label>
+                <input type="number" max="<?= $max_page ?>" min="1" name="page" value="<?= $page ?>">
+                <?php generate_neon_button("GO") ?>
+            </form>
+
+            <?php if ($page < $max_page) {
+                generate_neon_link("Next page", 'livre/livreor?page=' . $page + 1);
+            } else { ?> <div></div> <?php } ?>
+        </div>
+
     <?php } ?>
 
 
@@ -112,3 +122,4 @@
         </div>
     </div>
 </div> -->
+</div>
