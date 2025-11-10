@@ -12,7 +12,7 @@ define('DB_PASS', '');
 define('DB_CHARSET', 'utf8');
 
 // Configuration de l'application
-define('BASE_URL', 'http://localhost/livre-or/public');
+define('BASE_URL', 'https://nina-penot.students-laplateforme.io/livre-or/public');
 define('APP_NAME', "Livre d'or");
 define('APP_VERSION', '1.0.0');
 
