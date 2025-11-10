@@ -157,10 +157,29 @@ body {
 /* Connexion & Inscription */
 
 .connect_form {
-    background-color: var(--supp_color2);
-    color: var(--main_color);
+    background-color: var(--secondary_color);
+    color: var(--white);
+    text-decoration: none;
+    padding: 20px;
+    margin: 20px;
     border-radius: 10px;
-    padding: 15px;
+    box-shadow: inset 0px 0px 8px 6px var(--supp_color2),
+        0px 0px 10px 10px var(--supp_color2),
+        0px 0px 0px 7px var(--supp_color2);
+}
+
+.input_num {
+    background-color: var(--secondary_color);
+    color: var(--supp_color2);
+    text-decoration: none;
+    text-shadow: 0px 0px 9px var(--supp_color2), 0px 0px 9px var(--supp_color2);
+    padding: 8px;
+    border-radius: 3px;
+    margin: 0 5px 0 5px;
+    border: none;
+    box-shadow: inset 0px 0px 2px 2px var(--supp_color2),
+        0px 0px 10px 10px var(--supp_color2),
+        0px 0px 0px 5px var(--supp_color2);
 }
 
 /* Messages livre */
@@ -274,6 +293,7 @@ body {
 .your_comments {
     font-family: 'Knewave-Regular';
     font-size: 25px;
+    margin-bottom: 20px;
 }
 
 .profile_com {

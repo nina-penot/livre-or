@@ -1,6 +1,6 @@
 <div class="your_comments">Bienvenue sur votre compte, <?= $login ?> !</div>
 
-<form method="post">
+<form class="connect_form glow float_column gap_small" method="post">
     <label for="login_change">Changez votre login</label>
     <input type="text" name="login_change" value="<?= $login ?>">
     <label for="pass_change">Changez votre mot de passe</label>
@@ -32,23 +32,23 @@
     }
     if ($max_page > 1) {
     ?>
-        <div>Page : <?= $page; ?> / <?= $max_page ?></div>
+        <div style="margin-top: 10px; text-align:center;">Page : <?= $page; ?> / <?= $max_page ?></div>
 
         <div class="page_grid">
             <?php
             //afficher pagination
             if ($page > 1) {
-                generate_neon_link("Prev page", 'home/profil?page=' . $page - 1);
+                generate_neon_link("<<", 'home/profil?page=' . $page - 1);
             } else { ?> <div></div> <?php } ?>
 
             <form style="justify-self: center;" method="get">
                 <label for="page">Goto page</label>
-                <input type="number" max="<?= $max_page ?>" min="1" name="page" value="<?= $page ?>">
+                <input class="input_num" type="number" max="<?= $max_page ?>" min="1" name="page" value="<?= $page ?>">
                 <?php generate_neon_button("GO") ?>
             </form>
 
             <?php if ($page < $max_page) {
-                generate_neon_link("Next page", 'home/profil?page=' . $page + 1);
+                generate_neon_link(">>", 'home/profil?page=' . $page + 1);
             } else { ?> <div></div> <?php } ?>
         </div>
 

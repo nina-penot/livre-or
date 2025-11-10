@@ -22,7 +22,7 @@ function home_profil()
         redirect('auth/connexion');
     }
     $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-    $per_page = 2;
+    $per_page = 5;
     $count = count_comments();
     $max_page = ceil($count / $per_page);
     //add database comments

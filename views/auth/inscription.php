@@ -1,9 +1,9 @@
-<form class="connect_form float_column" method="post">
+<form class="connect_form glow float_column gap_small" method="post">
     <label for="login">Login</label>
     <input type="text" name="login" required>
     <label for="pass">Mot de passe</label>
     <input type="password" name="pass" required>
     <label for="pass">Confirmation de mot de passe</label>
     <input type="password" name="confirm" required>
-    <button type="submit">ENVOYER</button>
+    <?php generate_neon_button("ENVOYER") ?>
 </form>

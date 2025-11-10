@@ -74,17 +74,17 @@
             <?php
             //afficher pagination
             if ($page > 1) {
-                generate_neon_link("Prev page", 'livre/livreor?page=' . $page - 1);
+                generate_neon_link("<<", 'livre/livreor?page=' . $page - 1);
             } else { ?> <div></div> <?php } ?>
 
             <form style="justify-self: center;" method="get">
                 <label for="page">Goto page</label>
-                <input type="number" max="<?= $max_page ?>" min="1" name="page" value="<?= $page ?>">
+                <input class="input_num" type="number" max="<?= $max_page ?>" min="1" name="page" value="<?= $page ?>">
                 <?php generate_neon_button("GO") ?>
             </form>
 
             <?php if ($page < $max_page) {
-                generate_neon_link("Next page", 'livre/livreor?page=' . $page + 1);
+                generate_neon_link(">>", 'livre/livreor?page=' . $page + 1);
             } else { ?> <div></div> <?php } ?>
         </div>
 
